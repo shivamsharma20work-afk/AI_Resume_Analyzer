@@ -72,10 +72,10 @@ pipeline {
 
   post {
     success {
-      echo "✅ CI successful: Images pushed to ECR"
+      echo "CI successful: Images pushed to ECR"
     }
     failure {
-      echo "❌ CI failed"
+      echo "CI failed"
     }
   }
 }

@@ -1,0 +1,22 @@
+kubernetes apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  namespace: frontend-k8s
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+      namespace: frontend-k8s
+  template:
+    metadata:
+      labels:
+        app: frontend
+        namespace: frontend-k8s
+    spec:
+      containers:
+      - name: frontend-deployment
+        image: 288096932508.dkr.ecr.us-east-1.amazonaws.com/frontend:5
+        ports:
+        - containerPort: 80
