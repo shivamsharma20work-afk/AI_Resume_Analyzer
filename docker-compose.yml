@@ -1,0 +1,15 @@
+services:
+  frontend:
+    image: shivam011/frontend-file
+    container_name: frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+  backend:
+    image: shivam011/backend-file
+    container_name: backend
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
